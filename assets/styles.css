@@ -631,3 +631,80 @@ body *{scroll-behavior:smooth}
   .brand-original{width:172px!important;max-width:60vw!important}
   .footer-brand-original .brand-original{width:190px!important}
 }
+
+/* Brand hotfix: visible lockup, no white plaque */
+.brand-original-wrap,
+.footer-brand-original,
+.brand-original,
+.nexus-lockup{
+  display:none!important;
+}
+.brand{
+  display:inline-flex!important;
+  align-items:center!important;
+  padding:0!important;
+  background:none!important;
+  border:0!important;
+  box-shadow:none!important;
+  border-radius:0!important;
+}
+.brand-lockup-live{
+  display:inline-flex;
+  align-items:center;
+  gap:13px;
+  min-width:0;
+}
+.brand-symbol-live{
+  display:block;
+  width:52px;
+  height:52px;
+  object-fit:contain;
+  flex:0 0 auto;
+  filter:none!important;
+}
+.brand-type-live{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:3px;
+  line-height:1;
+  white-space:nowrap;
+}
+.brand-type-live strong{
+  color:#f5f7f6;
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:24px;
+  font-weight:700;
+  letter-spacing:.24em;
+  line-height:1;
+}
+.brand-type-live small{
+  color:#96a59e;
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:7px;
+  font-weight:600;
+  letter-spacing:.34em;
+  line-height:1.25;
+}
+.footer-brand .brand-lockup-live{
+  margin-bottom:8px;
+}
+.footer-brand .brand-symbol-live{
+  width:58px;
+  height:58px;
+}
+.footer-brand .brand-type-live strong{
+  font-size:26px;
+}
+.footer-brand .brand-type-live small{
+  font-size:7.5px;
+}
+@media(max-width:600px){
+  .brand-lockup-live{gap:9px}
+  .brand-symbol-live{width:42px;height:42px}
+  .brand-type-live strong{font-size:18px;letter-spacing:.20em}
+  .brand-type-live small{font-size:5.5px;letter-spacing:.27em}
+  .footer-brand .brand-symbol-live{width:48px;height:48px}
+  .footer-brand .brand-type-live strong{font-size:21px}
+  .footer-brand .brand-type-live small{font-size:6px}
+}

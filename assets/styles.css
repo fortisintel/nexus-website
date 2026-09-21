@@ -486,3 +486,104 @@ body{
     pointer-events:none;
   }
 }
+
+/* NEXUS clean visual reset — 2026-09-21 */
+:root{--nexus-panel:#09110e;--nexus-panel-2:#0b1511}
+body{
+  background:
+    radial-gradient(circle at 82% 6%,rgba(22,152,112,.055),transparent 24%),
+    linear-gradient(180deg,#060b09 0%,#050807 100%) !important;
+}
+.site-header{
+  background:rgba(5,9,8,.94)!important;
+  border-bottom:1px solid rgba(157,190,176,.10)!important;
+  box-shadow:none!important;
+  backdrop-filter:blur(12px);
+}
+.brand{display:inline-flex!important;align-items:center!important;line-height:0!important}
+.nexus-lockup{display:block;width:270px;height:auto;max-width:48vw}
+.footer-brand .nexus-lockup{width:280px;max-width:100%}
+.nexus-symbol-inline{display:block;width:88px;height:88px}
+
+/* Remove all raster/effect backgrounds introduced in the cinematic pass */
+.hero-cinematic-media,
+.hero-cinematic-veil,
+.hero-cinematic-glow,
+.download-cinematic-media,
+.download-cinematic-veil,
+.download-info-texture,
+.section-textured::before,
+.section-textured::after,
+.downloads-home::before,
+.downloads-home::after{
+  display:none!important;
+  background:none!important;
+  animation:none!important;
+  filter:none!important;
+  opacity:0!important;
+}
+
+/* Clean, non-pixelated background treatment */
+.hero-cinematic{
+  background:
+    radial-gradient(circle at 78% 24%,rgba(28,190,143,.085),transparent 24%),
+    linear-gradient(180deg,#08100d 0%,#060b09 62%,#050807 100%)!important;
+}
+.download-cinematic{
+  background:
+    radial-gradient(circle at 82% 22%,rgba(28,190,143,.075),transparent 24%),
+    linear-gradient(180deg,#08100d 0%,#060b09 62%,#050807 100%)!important;
+}
+.section-textured,
+.download-info-section,
+.downloads-home{
+  background:linear-gradient(180deg,#07100d,#050807)!important;
+}
+.hero-cinematic::after{display:none!important}
+
+.hero-signal-card,
+.download-glass-card,
+.release-spec-card,
+.release-card,
+.download-note{
+  background:linear-gradient(145deg,rgba(11,22,18,.94),rgba(7,12,10,.96))!important;
+  backdrop-filter:blur(14px);
+  border-color:rgba(132,174,155,.14)!important;
+  box-shadow:0 22px 60px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.025)!important;
+}
+
+/* Keep only restrained motion */
+[data-reveal]{opacity:1!important;transform:none!important;transition:none!important}
+.hero-scroll-cue{display:none!important}
+.hero-cinematic,
+.download-cinematic,
+.section-textured::before,
+.download-info-texture{animation:none!important}
+.hero-cinematic-media,
+.download-cinematic-media{transform:none!important}
+body *{scroll-behavior:smooth}
+
+/* Typography and spacing polish */
+.hero-copy-cinematic h1,
+.download-cinematic-copy h1{
+  text-shadow:none!important;
+}
+.hero-copy-cinematic .hero-lead,
+.download-cinematic-copy>p:not(.eyebrow){
+  text-shadow:none!important;
+}
+.header-inner{min-height:82px!important}
+
+@media(max-width:900px){
+  .nexus-lockup{width:230px;max-width:58vw}
+  .hero-cinematic{min-height:760px!important}
+  .download-cinematic{min-height:760px!important}
+}
+@media(max-width:600px){
+  .header-inner{min-height:70px!important}
+  .nexus-lockup{width:188px;max-width:68vw}
+  .footer-brand .nexus-lockup{width:210px}
+  .nexus-symbol-inline{width:72px;height:72px}
+  .hero-cinematic{min-height:720px!important}
+  .download-cinematic{min-height:760px!important}
+}

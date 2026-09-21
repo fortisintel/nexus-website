@@ -276,7 +276,7 @@ body{
   position:absolute;
   z-index:-4;
   inset:-4%;
-  background:url("visuals/hero-global.webp") 62% center/cover no-repeat;
+  background:url("visuals/hero-global-v2.webp") 62% center/cover no-repeat;
   transform:scale(1.04) translate3d(var(--parallax-x,0),var(--parallax-y,0),0);
   transition:transform 1.2s cubic-bezier(.2,.7,.2,1);
   animation:cinematicBreath 18s ease-in-out infinite alternate;
@@ -284,7 +284,7 @@ body{
 .hero-cinematic-veil{
   position:absolute;z-index:-3;inset:0;
   background:
-    linear-gradient(90deg,rgba(3,7,6,.96) 0%,rgba(3,7,6,.86) 34%,rgba(3,7,6,.42) 61%,rgba(3,7,6,.18) 100%),
+    linear-gradient(90deg,rgba(3,7,6,.90) 0%,rgba(3,7,6,.74) 34%,rgba(3,7,6,.28) 61%,rgba(3,7,6,.06) 100%),
     linear-gradient(180deg,rgba(0,0,0,.18),rgba(3,7,6,.36) 75%,var(--bg));
 }
 .hero-cinematic-glow{
@@ -319,7 +319,7 @@ body{
 .section-textured{position:relative;overflow:hidden;isolation:isolate}
 .section-textured::before{
   content:"";position:absolute;z-index:-2;inset:-8%;
-  background:url("visuals/texture-waves.webp") center/cover no-repeat;
+  background:url("visuals/texture-waves-v2.webp") center/cover no-repeat;
   opacity:.28;filter:saturate(.84) contrast(1.1);
   animation:textureDrift 22s ease-in-out infinite alternate;
 }
@@ -338,7 +338,7 @@ body{
   content:"";position:absolute;z-index:-2;right:0;top:28px;bottom:20px;width:min(56vw,850px);
   background:
     linear-gradient(90deg,var(--bg) 0%,rgba(6,10,9,.32) 33%,rgba(6,10,9,.10)),
-    url("visuals/product-phone.webp") center/cover no-repeat;
+    url("visuals/product-phone-v2.webp") center/cover no-repeat;
   opacity:.40;mask-image:linear-gradient(90deg,transparent 0%,#000 24%,#000 100%);
 }
 .downloads-home::after{
@@ -357,14 +357,14 @@ body{
 }
 .download-cinematic-media{
   position:absolute;z-index:-4;inset:-4%;
-  background:url("visuals/product-phone.webp") 66% center/cover no-repeat;
+  background:url("visuals/product-phone-v2.webp") 66% center/cover no-repeat;
   transform:scale(1.04) translate3d(var(--parallax-x,0),var(--parallax-y,0),0);
   transition:transform 1.2s cubic-bezier(.2,.7,.2,1);
   animation:cinematicBreath 18s ease-in-out infinite alternate-reverse;
 }
 .download-cinematic-veil{
   position:absolute;z-index:-3;inset:0;
-  background:linear-gradient(90deg,rgba(3,7,6,.97) 0%,rgba(3,7,6,.86) 35%,rgba(3,7,6,.30) 67%,rgba(3,7,6,.08)),linear-gradient(180deg,rgba(0,0,0,.15),rgba(3,7,6,.18) 65%,var(--bg));
+  background:linear-gradient(90deg,rgba(3,7,6,.90) 0%,rgba(3,7,6,.72) 35%,rgba(3,7,6,.18) 67%,rgba(3,7,6,.03)),linear-gradient(180deg,rgba(0,0,0,.15),rgba(3,7,6,.18) 65%,var(--bg));
 }
 .download-cinematic-inner{
   width:min(calc(100% - 40px),var(--max));display:grid;grid-template-columns:1fr .72fr;gap:72px;align-items:end;
@@ -390,7 +390,7 @@ body{
 .download-info-section{position:relative;padding:105px 0 118px;overflow:hidden;isolation:isolate}
 .download-info-texture{
   position:absolute;z-index:-2;inset:-5%;
-  background:url("visuals/texture-waves.webp") center/cover no-repeat;opacity:.24;
+  background:url("visuals/texture-waves-v2.webp") center/cover no-repeat;opacity:.24;
   animation:textureDrift 24s ease-in-out infinite alternate-reverse;
 }
 .download-info-section::after{
@@ -464,4 +464,25 @@ body{
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
   [data-reveal]{opacity:1!important;transform:none!important}
+}
+
+/* v2 visual correction */
+.hero-cinematic-media{filter:saturate(.86) contrast(1.08) brightness(.90)}
+.download-cinematic-media{filter:saturate(.92) contrast(1.06) brightness(.92)}
+.section-textured::before,.download-info-texture{opacity:.38}
+.downloads-home::before{opacity:.58}
+@media (min-width:901px){
+  .hero-cinematic::after{
+    content:"";
+    position:absolute;
+    right:max(22px,calc((100vw - var(--max))/2));
+    top:50%;
+    width:min(38vw,540px);
+    height:min(58vh,560px);
+    transform:translateY(-50%);
+    border:1px solid rgba(146,255,221,.10);
+    border-radius:30px;
+    box-shadow:0 35px 110px rgba(0,0,0,.34), inset 0 1px 0 rgba(255,255,255,.035);
+    pointer-events:none;
+  }
 }

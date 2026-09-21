@@ -587,3 +587,47 @@ body *{scroll-behavior:smooth}
   .hero-cinematic{min-height:720px!important}
   .download-cinematic{min-height:760px!important}
 }
+
+/* Original NEXUS brand lockup */
+.nexus-lockup{display:none!important}
+.brand-original-wrap{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  padding:7px 12px!important;
+  border-radius:13px!important;
+  background:#eef2f0!important;
+  border:1px solid rgba(255,255,255,.10)!important;
+  box-shadow:0 8px 28px rgba(0,0,0,.18)!important;
+  line-height:0!important;
+}
+.brand-original{
+  display:block!important;
+  width:238px!important;
+  max-width:42vw!important;
+  height:auto!important;
+  object-fit:contain!important;
+  filter:none!important;
+  opacity:1!important;
+}
+.footer-brand-original{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 14px;
+  border-radius:14px;
+  background:#eef2f0;
+  border:1px solid rgba(255,255,255,.08);
+}
+.footer-brand-original .brand-original{
+  width:250px!important;
+  max-width:100%!important;
+}
+@media(max-width:900px){
+  .brand-original{width:210px!important;max-width:54vw!important}
+}
+@media(max-width:600px){
+  .brand-original-wrap{padding:6px 9px!important;border-radius:11px!important}
+  .brand-original{width:172px!important;max-width:60vw!important}
+  .footer-brand-original .brand-original{width:190px!important}
+}

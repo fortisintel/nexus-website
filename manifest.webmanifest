@@ -1,0 +1,19 @@
+{
+  "name": "NEXUS Secure Communications",
+  "short_name": "NEXUS",
+  "description": "Plataforma de comunicaciones privadas en desarrollo con mensajería, push-to-talk, voz y vídeo.",
+  "lang": "es-ES",
+  "start_url": "/nexus-website/",
+  "scope": "/nexus-website/",
+  "display": "standalone",
+  "background_color": "#050807",
+  "theme_color": "#060a09",
+  "icons": [
+    {
+      "src": "/nexus-website/assets/brand/nexus-symbol.webp?v=brand-live-2",
+      "sizes": "any",
+      "type": "image/webp",
+      "purpose": "any"
+    }
+  ]
+}

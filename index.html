@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#060a09">
+  <meta name="description" content="NEXUS — secure communications for private messaging, push-to-talk, voice and video.">
+  <title>NEXUS — Secure Communications</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="#top" aria-label="NEXUS home">
+        <span class="brand-mark" aria-hidden="true">N</span>
+        <span class="brand-copy">
+          <strong>NEXUS</strong>
+          <small>SECURE COMMUNICATIONS</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
+        <a href="#product">Product</a>
+        <a href="#security">Security</a>
+        <a href="#downloads">Downloads</a>
+        <a href="#organizations">Organizations</a>
+        <a href="#docs">Docs</a>
+        <a class="button button-small" href="#downloads">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="top" class="hero shell">
+      <div class="hero-copy">
+        <p class="eyebrow">PRIVATE BY DESIGN</p>
+        <h1>Communication without compromise.</h1>
+        <p class="hero-lead">NEXUS brings private messaging, push-to-talk, voice and video into one secure communications platform built around end-to-end encryption, minimal metadata and device-owned identity.</p>
+        <div class="hero-actions">
+          <a class="button" href="#downloads">Download NEXUS</a>
+          <a class="button button-ghost" href="#security">Explore security</a>
+        </div>
+        <p class="hero-note">Alpha software. Security-critical components are still under active development and review.</p>
+      </div>
+
+      <div class="hero-panel" aria-label="NEXUS product preview">
+        <div class="status-row">
+          <span>CONTROL ROOM</span>
+          <span class="status-secure">● SECURE</span>
+        </div>
+        <div class="preview-chat">
+          <div class="preview-line">
+            <span class="avatar">N</span>
+            <div>
+              <strong>Neil</strong>
+              <p>Encrypted session established.</p>
+            </div>
+          </div>
+          <div class="preview-line">
+            <span class="avatar">C</span>
+            <div>
+              <strong>Control</strong>
+              <p>PTT channel ready.</p>
+            </div>
+          </div>
+        </div>
+        <button class="ptt-button" type="button" aria-label="Push to talk preview" disabled>
+          <span>HOLD TO TALK</span>
+        </button>
+        <p class="preview-caption">Interface preview — realtime transport is not enabled on this public website.</p>
+      </div>
+    </section>
+
+    <section id="product" class="section shell">
+      <div class="section-heading">
+        <p class="eyebrow">PRODUCT</p>
+        <h2>One private communications layer.</h2>
+        <p>Built for individuals and teams that need private, fast and simple communications without turning security into a usability problem.</p>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature-card">
+          <span class="feature-index">01</span>
+          <h3>Messages</h3>
+          <p>Private text, media, files and voice notes with end-to-end encryption as the default design goal.</p>
+        </article>
+        <article class="feature-card">
+          <span class="feature-index">02</span>
+          <h3>Push to Talk</h3>
+          <p>Low-friction hold-to-talk communications with store-and-forward fallback for unstable connectivity.</p>
+        </article>
+        <article class="feature-card">
+          <span class="feature-index">03</span>
+          <h3>Voice</h3>
+          <p>Relay-first calling architecture designed to reduce direct peer IP exposure by default.</p>
+        </article>
+        <article class="feature-card">
+          <span class="feature-index">04</span>
+          <h3>Video</h3>
+          <p>Private video communications designed to share the same secure identity and verification model.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="security" class="section section-dark">
+      <div class="shell security-layout">
+        <div>
+          <p class="eyebrow">SECURITY</p>
+          <h2>Security should be architecture, not marketing.</h2>
+          <p>NEXUS is being built around verifiable properties: endpoint-owned keys, encrypted content, minimized server knowledge and standards-based cryptography.</p>
+        </div>
+
+        <div class="security-list">
+          <div><strong>End-to-end by design</strong><span>Servers transport ciphertext rather than readable message content.</span></div>
+          <div><strong>Device-owned identity</strong><span>No mandatory phone number or email address for core identity.</span></div>
+          <div><strong>Standards-based cryptography</strong><span>NEXUS is validating MLS 1.0 / RFC 9420 through a Rust secure core.</span></div>
+          <div><strong>Relay-first calls</strong><span>Designed so peers do not receive one another's public IP by default.</span></div>
+          <div><strong>Minimal metadata</strong><span>Logging and retention are treated as attack-surface decisions.</span></div>
+          <div><strong>Independent review</strong><span>External security review is required before production-grade security claims.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="downloads" class="section shell">
+      <div class="section-heading">
+        <p class="eyebrow">DOWNLOADS</p>
+        <h2>Get NEXUS.</h2>
+        <p>Current builds are for internal alpha testing. Production signing, hardening and independent review are still in progress.</p>
+      </div>
+
+      <div class="download-grid">
+        <article class="download-card featured">
+          <div>
+            <span class="platform">ANDROID</span>
+            <h3>NEXUS Alpha</h3>
+            <p>Android test build generated from the private application repository.</p>
+          </div>
+          <div class="download-meta">
+            <span>Channel: Alpha</span>
+            <span>Status: Internal testing</span>
+          </div>
+          <a class="button" href="https://github.com/fortisintel/nexus-secure-communications/actions" rel="noopener">Open build artifacts</a>
+        </article>
+
+        <article class="download-card">
+          <span class="platform">IOS</span>
+          <h3>Coming later</h3>
+          <p>iOS distribution will follow once secure storage and release signing are finalized.</p>
+        </article>
+
+        <article class="download-card">
+          <span class="platform">DESKTOP</span>
+          <h3>Planned</h3>
+          <p>Windows, macOS and Linux clients are part of the longer-term roadmap.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="organizations" class="section section-accent">
+      <div class="shell org-layout">
+        <div>
+          <p class="eyebrow">FOR ORGANIZATIONS</p>
+          <h2>Private communications infrastructure for teams.</h2>
+        </div>
+        <div class="org-copy">
+          <p>NEXUS is being designed to support dedicated relay infrastructure, controlled deployments and private communication rooms without giving infrastructure operators access to message content.</p>
+          <ul>
+            <li>Private deployment</li>
+            <li>Dedicated relay infrastructure</li>
+            <li>Managed device enrollment</li>
+            <li>Organization-level access policy</li>
+          </ul>
+          <a class="button button-dark" href="mailto:security@nexus.example">Talk to NEXUS</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="docs" class="section shell">
+      <div class="section-heading">
+        <p class="eyebrow">DOCS</p>
+        <h2>Understand how NEXUS is built.</h2>
+      </div>
+
+      <div class="docs-grid">
+        <a class="doc-card" href="https://github.com/fortisintel/nexus-secure-communications/blob/main/docs/ARCHITECTURE.md" rel="noopener">
+          <span>Architecture</span>
+          <strong>System design and trust boundaries →</strong>
+        </a>
+        <a class="doc-card" href="https://github.com/fortisintel/nexus-secure-communications/blob/main/docs/THREAT-MODEL.md" rel="noopener">
+          <span>Threat model</span>
+          <strong>Adversaries, assumptions and residual risk →</strong>
+        </a>
+        <a class="doc-card" href="https://github.com/fortisintel/nexus-secure-communications/blob/main/docs/ROADMAP.md" rel="noopener">
+          <span>Roadmap</span>
+          <strong>Security-first development milestones →</strong>
+        </a>
+      </div>
+    </section>
+
+    <section id="about" class="section shell about">
+      <p class="eyebrow">ABOUT</p>
+      <h2>Conversations should belong to the people having them.</h2>
+      <p>NEXUS is a secure communications project focused on privacy, control and practical usability. The product is currently in alpha development.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div>
+        <strong>NEXUS</strong>
+        <p>SECURE COMMUNICATIONS</p>
+      </div>
+      <div>
+        <a href="#security">Security</a>
+        <a href="#downloads">Downloads</a>
+        <a href="#docs">Docs</a>
+      </div>
+      <div>
+        <a href="privacy.html">Privacy</a>
+        <a href="security.html">Security policy</a>
+        <a href="https://github.com/fortisintel/nexus-secure-communications" rel="noopener">GitHub</a>
+      </div>
+      <small>© 2026 NEXUS. Alpha software.</small>
+    </div>
+  </footer>
+
+  <script src="assets/site.js"></script>
+</body>
+</html>

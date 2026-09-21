@@ -1,20 +1,20 @@
 # NEXUS Website
 
-Public corporate website for NEXUS — Secure Communications.
+Web corporativa pública de **NEXUS — Comunicaciones Seguras**.
 
-This repository intentionally contains no private application source, cryptographic keys, backend credentials or internal infrastructure configuration.
+Este repositorio no contiene código privado de la aplicación, claves criptográficas, credenciales del backend ni configuración interna de infraestructura.
 
-## Pages
+## Secciones
 
-- Home
-- Product
-- Security
-- Downloads
-- Organizations
-- Docs
-- Privacy
-- Security policy
+- Inicio
+- Producto
+- Seguridad
+- Descargas
+- Organizaciones
+- Documentación
+- Privacidad
+- Política de seguridad
 
-## Hosting
+## Alojamiento
 
-Designed for GitHub Pages.
+Diseñada para GitHub Pages.

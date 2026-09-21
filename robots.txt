@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fortisintel.github.io/nexus-website/sitemap.xml

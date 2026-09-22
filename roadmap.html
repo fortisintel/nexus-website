@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es-ES">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#060a09">
+  <meta name="robots" content="index,follow,max-snippet:-1">
+  <meta name="description" content="Estado del desarrollo de NEXUS: identidad MLS, mensajería 1:1, relay, persistencia, PTT, llamadas y hardening.">
+  <link rel="canonical" href="https://fortisintel.github.io/nexus-website/roadmap.html">
+  <title>Hoja de ruta de NEXUS | Estado del desarrollo</title>
+  <link rel="stylesheet" href="assets/styles.css?v=20260922-docs-v1">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="/nexus-website/" aria-label="Inicio de NEXUS"><span class="brand-lockup-live">
+  <img class="brand-symbol-live" src="/nexus-website/assets/brand/nexus-symbol.webp?v=brand-live-2" alt="" width="52" height="52" decoding="async">
+  <span class="brand-type-live">
+    <strong>NEXUS</strong>
+    <small>SECURE COMMUNICATIONS</small>
+  </span>
+</span></a>
+      <nav class="primary-nav" aria-label="Navegación">
+        <a href="/nexus-website/">Inicio</a>
+        <a href="/nexus-website/downloads.html">Descargas</a>
+        <a href="/nexus-website/security.html">Seguridad</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="section shell docs-page">
+      <p class="eyebrow">HOJA DE RUTA</p>
+      <h1>De la primera sesión segura al producto completo.</h1>
+      <div class="docs-prose roadmap-web">
+  <div class="roadmap-block"><span class="status-done">COMPLETADO</span><h2>Fundación</h2><p>Threat model, secure core Rust, CI de seguridad, arquitectura y relay opaco.</p></div>
+  <div class="roadmap-block"><span class="status-progress">EN CURSO</span><h2>Identidad y mensajería 1:1</h2><p>MLS/OpenMLS, identidad local, QR de invitación, puente Flutter↔Rust, persistencia cifrada y transporte M1 por relay ya están implementados. Quedan verification flows más completos, historial local y hardening.</p></div>
+  <div class="roadmap-block"><span class="status-next">SIGUIENTE</span><h2>Metadatos</h2><p>Tokens de routing más efímeros, retención reforzada, push sin plaintext, reducción de logs y evaluación de padding/batching.</p></div>
+  <div class="roadmap-block"><span class="status-next">PLANIFICADO</span><h2>Push-to-Talk</h2><p>Opus, hold-to-talk, transporte en tiempo real relay-first y store-and-forward.</p></div>
+  <div class="roadmap-block"><span class="status-next">PLANIFICADO</span><h2>Voz y vídeo</h2><p>WebRTC, TURN-only privacy mode, verificación de identidad de llamada y pruebas de fugas de red.</p></div>
+  <div class="roadmap-block"><span class="status-next">ANTES DE PRODUCCIÓN</span><h2>Hardening</h2><p>Builds reproducibles, SBOM, fuzzing, test vectors, pentest móvil, revisión criptográfica independiente y auditoría externa.</p></div>
+</div>
+    </section>
+  </main>
+  <footer class="site-footer">
+  <div class="shell footer-main">
+    <div class="footer-intro">
+      <a class="footer-logo" href="/nexus-website/"><span class="brand-lockup-live">
+  <img class="brand-symbol-live" src="/nexus-website/assets/brand/nexus-symbol.webp?v=brand-live-2" alt="" width="52" height="52" decoding="async">
+  <span class="brand-type-live">
+    <strong>NEXUS</strong>
+    <small>SECURE COMMUNICATIONS</small>
+  </span>
+</span></a>
+      <p class="footer-statement">Comunicaciones privadas diseñadas para que el contenido permanezca bajo el control de quienes participan en la conversación.</p>
+      <div class="footer-status"><span class="footer-status-dot"></span><span><strong>Alpha instalable</strong> · desarrollo activo</span></div>
+    </div>
+    <nav class="footer-nav" aria-label="Navegación del pie de página">
+      <div class="footer-column">
+        <h2>Producto</h2>
+        <a href="/nexus-website/#product">Mensajería y PTT</a>
+        <a href="/nexus-website/#security">Seguridad</a>
+        <a href="/nexus-website/downloads.html">Descargas</a>
+      </div>
+      <div class="footer-column">
+        <h2>Documentación</h2>
+        <a href="/nexus-website/architecture.html">Arquitectura</a>
+        <a href="/nexus-website/threat-model.html">Modelo de amenazas</a>
+        <a href="/nexus-website/roadmap.html">Hoja de ruta</a>
+      </div>
+      <div class="footer-column">
+        <h2>Legal</h2>
+        <a href="/nexus-website/security.html">Política de seguridad</a>
+        <a href="/nexus-website/privacy.html">Privacidad</a>
+        <a href="/nexus-website/sitemap.xml">Mapa del sitio</a>
+      </div>
+    </nav>
+  </div>
+  <div class="shell footer-bottom">
+    <p>© 2026 NEXUS. Software en fase Alpha. Las propiedades de seguridad descritas reflejan el estado técnico documentado de cada componente.</p>
+    <div class="footer-legal">
+      <a href="/nexus-website/privacy.html">Privacidad</a>
+      <a href="/nexus-website/security.html">Seguridad</a>
+      <a href="/nexus-website/downloads.html">Descargas</a>
+    </div>
+  </div>
+</footer>
+  <script src="assets/site.js?v=20260921-clean-v3"></script>
+</body>
+</html>

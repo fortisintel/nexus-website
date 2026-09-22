@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es-ES">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#060a09">
+  <meta name="robots" content="index,follow,max-snippet:-1">
+  <meta name="description" content="Modelo de amenazas de NEXUS: observadores de red, relay comprometido, contactos maliciosos, pérdida del dispositivo, supply chain y riesgos residuales.">
+  <link rel="canonical" href="https://fortisintel.github.io/nexus-website/threat-model.html">
+  <title>Modelo de amenazas de NEXUS | Riesgos y límites</title>
+  <link rel="stylesheet" href="assets/styles.css?v=20260922-docs-v1">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="/nexus-website/" aria-label="Inicio de NEXUS"><span class="brand-lockup-live">
+  <img class="brand-symbol-live" src="/nexus-website/assets/brand/nexus-symbol.webp?v=brand-live-2" alt="" width="52" height="52" decoding="async">
+  <span class="brand-type-live">
+    <strong>NEXUS</strong>
+    <small>SECURE COMMUNICATIONS</small>
+  </span>
+</span></a>
+      <nav class="primary-nav" aria-label="Navegación">
+        <a href="/nexus-website/">Inicio</a>
+        <a href="/nexus-website/downloads.html">Descargas</a>
+        <a href="/nexus-website/security.html">Seguridad</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="section shell docs-page">
+      <p class="eyebrow">MODELO DE AMENAZAS</p>
+      <h1>Qué protege NEXUS y qué no puede prometer.</h1>
+      <div class="docs-prose">
+  <p class="lead">La seguridad útil empieza por definir adversarios concretos y reconocer los límites. NEXUS no equipara privacidad con invisibilidad absoluta.</p>
+  <h2>Observador pasivo de red</h2>
+  <p>Puede observar IP, volumen, temporización y conexiones TLS. NEXUS protege el contenido mediante cifrado de aplicación, pero la existencia y ciertos patrones del tráfico pueden seguir siendo observables.</p>
+  <h2>Relay comprometido</h2>
+  <p>Un operador comprometido puede observar conexiones y buzones, pero el diseño evita entregarle las claves necesarias para descifrar el contenido MLS.</p>
+  <h2>Contacto malicioso</h2>
+  <p>El modelo contempla verificación de identidad, fingerprints, protección frente a replay y avisos de cambio de identidad. La verificación bilateral completa sigue siendo trabajo pendiente de la fase Alpha.</p>
+  <h2>Dispositivo perdido o comprometido</h2>
+  <p>El estado criptográfico se almacena cifrado y la clave de envoltura se separa mediante mecanismos de almacenamiento seguro. Un dispositivo totalmente comprometido y desbloqueado sigue pudiendo exponer el contenido disponible en ese endpoint.</p>
+  <h2>Cadena de suministro</h2>
+  <p>Dependencias fijadas, análisis automático, compilación CI y verificación del APK reducen superficie, pero una versión destinada a escenarios de alto riesgo requiere revisión independiente, pentest y proceso de firma robusto.</p>
+  <h2>Límites explícitos</h2>
+  <ul><li>No garantiza invisibilidad frente a un ISP o adversario global.</li><li>No protege un endpoint completamente comprometido.</li><li>No evita capturas realizadas fuera del dispositivo.</li><li>La Alpha no debe describirse como auditada ni como una garantía absoluta de anonimato.</li></ul>
+</div>
+    </section>
+  </main>
+  <footer class="site-footer">
+  <div class="shell footer-main">
+    <div class="footer-intro">
+      <a class="footer-logo" href="/nexus-website/"><span class="brand-lockup-live">
+  <img class="brand-symbol-live" src="/nexus-website/assets/brand/nexus-symbol.webp?v=brand-live-2" alt="" width="52" height="52" decoding="async">
+  <span class="brand-type-live">
+    <strong>NEXUS</strong>
+    <small>SECURE COMMUNICATIONS</small>
+  </span>
+</span></a>
+      <p class="footer-statement">Comunicaciones privadas diseñadas para que el contenido permanezca bajo el control de quienes participan en la conversación.</p>
+      <div class="footer-status"><span class="footer-status-dot"></span><span><strong>Alpha instalable</strong> · desarrollo activo</span></div>
+    </div>
+    <nav class="footer-nav" aria-label="Navegación del pie de página">
+      <div class="footer-column">
+        <h2>Producto</h2>
+        <a href="/nexus-website/#product">Mensajería y PTT</a>
+        <a href="/nexus-website/#security">Seguridad</a>
+        <a href="/nexus-website/downloads.html">Descargas</a>
+      </div>
+      <div class="footer-column">
+        <h2>Documentación</h2>
+        <a href="/nexus-website/architecture.html">Arquitectura</a>
+        <a href="/nexus-website/threat-model.html">Modelo de amenazas</a>
+        <a href="/nexus-website/roadmap.html">Hoja de ruta</a>
+      </div>
+      <div class="footer-column">
+        <h2>Legal</h2>
+        <a href="/nexus-website/security.html">Política de seguridad</a>
+        <a href="/nexus-website/privacy.html">Privacidad</a>
+        <a href="/nexus-website/sitemap.xml">Mapa del sitio</a>
+      </div>
+    </nav>
+  </div>
+  <div class="shell footer-bottom">
+    <p>© 2026 NEXUS. Software en fase Alpha. Las propiedades de seguridad descritas reflejan el estado técnico documentado de cada componente.</p>
+    <div class="footer-legal">
+      <a href="/nexus-website/privacy.html">Privacidad</a>
+      <a href="/nexus-website/security.html">Seguridad</a>
+      <a href="/nexus-website/downloads.html">Descargas</a>
+    </div>
+  </div>
+</footer>
+  <script src="assets/site.js?v=20260921-clean-v3"></script>
+</body>
+</html>

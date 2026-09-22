@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es-ES">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#060a09">
+  <meta name="robots" content="index,follow,max-snippet:-1">
+  <meta name="description" content="Arquitectura técnica de NEXUS: Flutter, secure core en Rust, MLS, almacenamiento local cifrado, relay de mensajes y límites de confianza.">
+  <link rel="canonical" href="https://fortisintel.github.io/nexus-website/architecture.html">
+  <title>Arquitectura de NEXUS | Cliente, secure core y relay</title>
+  <link rel="stylesheet" href="assets/styles.css?v=20260922-docs-v1">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="/nexus-website/" aria-label="Inicio de NEXUS"><span class="brand-lockup-live">
+  <img class="brand-symbol-live" src="/nexus-website/assets/brand/nexus-symbol.webp?v=brand-live-2" alt="" width="52" height="52" decoding="async">
+  <span class="brand-type-live">
+    <strong>NEXUS</strong>
+    <small>SECURE COMMUNICATIONS</small>
+  </span>
+</span></a>
+      <nav class="primary-nav" aria-label="Navegación">
+        <a href="/nexus-website/">Inicio</a>
+        <a href="/nexus-website/downloads.html">Descargas</a>
+        <a href="/nexus-website/security.html">Seguridad</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="section shell docs-page">
+      <p class="eyebrow">ARQUITECTURA</p>
+      <h1>Cómo está construido NEXUS.</h1>
+      <div class="docs-prose">
+  <p class="lead">NEXUS separa interfaz, criptografía y transporte para que el cliente mantenga el control del material sensible y el servidor actúe únicamente como infraestructura de entrega.</p>
+  <h2>Topología de alto nivel</h2>
+  <div class="architecture-stack">
+    <div><strong>Cliente móvil</strong><span>Flutter · interfaz, permisos y experiencia de usuario.</span></div>
+    <div><strong>Secure Core</strong><span>Rust · identidad, sesiones MLS, cifrado, invitaciones y persistencia autenticada.</span></div>
+    <div><strong>Relay</strong><span>Transporte de sobres opacos y buzones basados en capacidades.</span></div>
+    <div><strong>Media</strong><span>La hoja de ruta contempla WebRTC/TURN con preferencia por relay para reducir exposición directa de IP.</span></div>
+  </div>
+  <h2>Límites de confianza</h2>
+  <p><strong>El dispositivo es el límite principal de confianza.</strong> Las claves privadas, el estado MLS y el contenido descifrado pertenecen al endpoint. El relay no recibe claves privadas ni necesita interpretar el contenido de una conversación.</p>
+  <h2>Estado local</h2>
+  <p>El estado criptográfico se sella antes de escribirse en disco mediante XChaCha20-Poly1305. La clave de envoltura se mantiene separada en el almacenamiento seguro de la plataforma.</p>
+  <h2>Relay de mensajes</h2>
+  <p>El relay utiliza direcciones de buzón públicas para entrega y una capacidad privada distinta para lectura. La lectura es destructiva en el M1 actual y los mensajes tienen expiración.</p>
+  <h2>Principios de minimización</h2>
+  <ul><li>Sin mensajes en claro en bases de datos del servidor.</li><li>Sin claves privadas de identidad en el relay.</li><li>Sin contenido de notificaciones push en claro.</li><li>Registros operativos orientados a salud del servicio, no a conversaciones.</li></ul>
+</div>
+    </section>
+  </main>
+  <footer class="site-footer">
+  <div class="shell footer-main">
+    <div class="footer-intro">
+      <a class="footer-logo" href="/nexus-website/"><span class="brand-lockup-live">
+  <img class="brand-symbol-live" src="/nexus-website/assets/brand/nexus-symbol.webp?v=brand-live-2" alt="" width="52" height="52" decoding="async">
+  <span class="brand-type-live">
+    <strong>NEXUS</strong>
+    <small>SECURE COMMUNICATIONS</small>
+  </span>
+</span></a>
+      <p class="footer-statement">Comunicaciones privadas diseñadas para que el contenido permanezca bajo el control de quienes participan en la conversación.</p>
+      <div class="footer-status"><span class="footer-status-dot"></span><span><strong>Alpha instalable</strong> · desarrollo activo</span></div>
+    </div>
+    <nav class="footer-nav" aria-label="Navegación del pie de página">
+      <div class="footer-column">
+        <h2>Producto</h2>
+        <a href="/nexus-website/#product">Mensajería y PTT</a>
+        <a href="/nexus-website/#security">Seguridad</a>
+        <a href="/nexus-website/downloads.html">Descargas</a>
+      </div>
+      <div class="footer-column">
+        <h2>Documentación</h2>
+        <a href="/nexus-website/architecture.html">Arquitectura</a>
+        <a href="/nexus-website/threat-model.html">Modelo de amenazas</a>
+        <a href="/nexus-website/roadmap.html">Hoja de ruta</a>
+      </div>
+      <div class="footer-column">
+        <h2>Legal</h2>
+        <a href="/nexus-website/security.html">Política de seguridad</a>
+        <a href="/nexus-website/privacy.html">Privacidad</a>
+        <a href="/nexus-website/sitemap.xml">Mapa del sitio</a>
+      </div>
+    </nav>
+  </div>
+  <div class="shell footer-bottom">
+    <p>© 2026 NEXUS. Software en fase Alpha. Las propiedades de seguridad descritas reflejan el estado técnico documentado de cada componente.</p>
+    <div class="footer-legal">
+      <a href="/nexus-website/privacy.html">Privacidad</a>
+      <a href="/nexus-website/security.html">Seguridad</a>
+      <a href="/nexus-website/downloads.html">Descargas</a>
+    </div>
+  </div>
+</footer>
+  <script src="assets/site.js?v=20260921-clean-v3"></script>
+</body>
+</html>

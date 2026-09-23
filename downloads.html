@@ -83,7 +83,7 @@
           <h2>NEXUS 0.2.0</h2>
           <p>Compilación interna para pruebas. La distribución pública firmada se habilitará desde este mismo centro cuando finalice el hardening de release.</p>
           <div class="download-glass-actions">
-            <a class="button button-wide" id="download-apk" href="https://fortisintel.github.io/nexus-secure-communications/NEXUS-Android-arm64.apk" download="NEXUS-Android-arm64.apk">Descargar NEXUS para Android</a>
+            <a class="button button-wide" id="download-apk" href="#" aria-disabled="true" data-ready="false">Verificando release firmada…</a>
             <a class="text-link" href="security.html">Ver política de seguridad →</a>
           </div>
         </aside>
@@ -100,6 +100,8 @@
             <div><dt>Versión</dt><dd id="release-version">0.2.0+3</dd></div>
             <div><dt>Canal</dt><dd>Alpha privada</dd></div>
             <div><dt>Tamaño</dt><dd id="release-size">Calculando…</dd></div>
+<div><dt>Firma</dt><dd id="release-signing">Verificando…</dd></div>
+<div><dt>Provenance</dt><dd id="release-provenance">Verificando…</dd></div>
             <div><dt>Plataforma</dt><dd>Android</dd></div>
           </dl>
           <div class="release-hash">
@@ -138,25 +140,61 @@
   <script>
   (() => {
     const metadataUrl = "https://fortisintel.github.io/nexus-secure-communications/latest.json";
+    const directApk = "https://fortisintel.github.io/nexus-secure-communications/NEXUS-Android-arm64.apk";
+    const button = document.getElementById("download-apk");
+
+    const failClosed = (message) => {
+      if (button) {
+        button.removeAttribute("href");
+        button.removeAttribute("download");
+        button.setAttribute("aria-disabled", "true");
+        button.dataset.ready = "false";
+        button.textContent = message || "Release firmada no disponible";
+      }
+      const signing = document.getElementById("release-signing");
+      const provenance = document.getElementById("release-provenance");
+      if (signing) signing.textContent = "No verificada";
+      if (provenance) provenance.textContent = "No verificada";
+    };
+
+    failClosed("Verificando release firmada…");
+
     fetch(metadataUrl, {cache: "no-store"})
       .then(r => {
         if (!r.ok) throw new Error("metadata unavailable");
         return r.json();
       })
       .then(meta => {
+        if (meta.signed !== true || meta.provenance !== true) {
+          throw new Error("release is not signed and attested");
+        }
+
         const version = `${meta.version}+${meta.build}`;
         const line = document.getElementById("release-version-line");
         const v = document.getElementById("release-version");
         const size = document.getElementById("release-size");
         const sizeLine = document.getElementById("release-size-line");
         const sha = document.getElementById("release-sha");
+        const signing = document.getElementById("release-signing");
+        const provenance = document.getElementById("release-provenance");
+
         if (line) line.textContent = `${meta.version} ${String(meta.channel || "").toUpperCase()}`;
         if (v) v.textContent = version;
         if (size) size.textContent = meta.size || "Disponible";
         if (sizeLine) sizeLine.textContent = meta.size || "Disponible";
         if (sha) sha.textContent = meta.sha256 || "No disponible";
+        if (signing) signing.textContent = "Verificada";
+        if (provenance) provenance.textContent = "Verificada";
+
+        if (button) {
+          button.href = directApk;
+          button.download = "NEXUS-Android-arm64.apk";
+          button.removeAttribute("aria-disabled");
+          button.dataset.ready = "true";
+          button.textContent = "Descargar NEXUS para Android";
+        }
       })
-      .catch(() => {});
+      .catch(() => failClosed("Release firmada no disponible"));
   })();
   </script>
 </body>
